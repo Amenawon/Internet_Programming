@@ -17,4 +17,16 @@
 }
 .part4 > p{ 
     color: green;
+} 
+.csym019{
+    display: inline;
+    width: 50%;
+    float: left;
+    background-color: aqua;
+}
+.csym015{
+    display: inline;
+    width: 50%;
+    float: left;
+    background-color: yellow;
 }
