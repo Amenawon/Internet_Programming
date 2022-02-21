@@ -35,7 +35,7 @@ footer {
 }
 
 main {
-    background-color: blue;
+    background-color: lightblue;
     grid-area: main;
     padding: 1em;
 }  
