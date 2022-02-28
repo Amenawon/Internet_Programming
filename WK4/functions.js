@@ -7,3 +7,12 @@ function print5() {
 }
 print5();
 print5();
+
+function renameHeader(){
+    var headerEl = document.getElementById('headertext');
+    var paragraphEl = document.getElementById('paragraphtext');
+    headerEl.firstChild.nodeValue = "New Heading";
+    paragraphEl.firstChild.nodeValue="This paragraph has changed its value"
+}
+
+document.addEventListener('DOMContentLoaded', renameHeader);
