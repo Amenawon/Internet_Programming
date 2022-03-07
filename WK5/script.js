@@ -1,12 +1,55 @@
 function loadCircle() {
     var circleEl = document.getElementById('circle');
-    document.addEventListener('keydown', moveElementToLeft);
+    circleEl.addEventListener('click', moveElementToLeft)
     circleEl.style.opacity = 1;
+}
+function keyDownLoadEvent() {
+    var circleEl = document.getElementById('circle');
+    document.addEventListener('keydown', keyDownEvent);
+    circleEl.style.opacity = 1;
+}
+let interval
+function keyDownEvent(event) {
+    if (event.keyCode == 37) {
+        clearInterval(interval);
+    interval=  setInterval(moveElementToLeft,10);
+      //to clear a timer clearInterval(timer)
+    }
+    else if (event.keyCode == 39) {
+        clearInterval(   interval);
+        interval=  setInterval(moveElementToRight,10);
+    }
+    else if (event.keyCode == 40) {
+        clearInterval();
+        interval= setInterval(moveElementToBottom,10);
+    }
+    else if (event.keyCode == 38) {
+        clearInterval();
+        interval= setInterval(moveElementToTop,10);
+    }
 }
 function moveElementToLeft() {
     var circleEl = document.getElementById('circle');
-    var positionFromLeft = circleEl.offsetLeft;
-    circleEl.style.left = (positionFromLeft - 10) + 'px';
+    var positionFromLeft = circleEl.offsetLeft;//offsetleft gives the current position
+    circleEl.style.left = (parseInt(positionFromLeft) - 1) + 'px';
+
+}
+function moveElementToRight() {
+    var circleEl = document.getElementById('circle');
+    var positionFromLeft = circleEl.offsetLeft;//offsetleft gives the current position
+    circleEl.style.left = (parseInt(positionFromLeft) + 1) + 'px';
+
+}
+function moveElementToTop() {
+    var circleEl = document.getElementById('circle');
+    var positionFromTop = circleEl.offsetTop;//offsetleft gives the current position
+    circleEl.style.top = (parseInt(positionFromTop) - 1) + 'px';
+
+}
+function moveElementToBottom() {
+    var circleEl = document.getElementById('circle');
+    var positionFromBottom = circleEl.offsetTop;//offsetleft gives the current position
+    circleEl.style.top = (parseInt(positionFromBottom) + 1) + 'px';
 
 }
 function displayAlert() {
@@ -34,3 +77,4 @@ function makeCircleTransparent() {
 
 }
 document.addEventListener('DOMContentLoaded', loadCircle);
+document.addEventListener('DOMContentLoaded', keyDownLoadEvent); 
