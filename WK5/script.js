@@ -1,6 +1,6 @@
-function clickCircle() {
+function loadCircle() {
     var circleEl = document.getElementById('circle');
-    circleEl.addEventListener('click',displayAlert);
+    circleEl.addEventListener('click',makeCircleTransparent);
     circleEl.style.opacity=1;
 }
 
@@ -11,4 +11,18 @@ function displayAlert(){
     alert('button was pressed!')
     
 }
-document.addEventListener('DOMContentLoaded', clickCircle);
+
+function makeCircleOpaque(){
+    var circleEl = document.getElementById('circle');
+    var circleOpacity= parseFloat(circleEl.style.opacity);
+    circleEl.style.opacity=circleOpacity + 0.1;
+       
+}
+
+function makeCircleTransparent(){
+    var circleEl = document.getElementById('circle');
+    var circleOpacity= parseFloat(circleEl.style.opacity);
+    circleEl.style.opacity=circleOpacity - 0.1;
+       
+}
+document.addEventListener('DOMContentLoaded', loadCircle);
