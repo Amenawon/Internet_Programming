@@ -1,6 +1,6 @@
 function loadCircle() {
     var circleEl = document.getElementById('circle');
-    circleEl.addEventListener('click',makeCircleTransparent);
+    circleEl.addEventListener('click',setTimer);
     circleEl.style.opacity=1;
 }
 
@@ -19,6 +19,9 @@ function makeCircleOpaque(){
        
 }
 
+function setTimer(){
+    setInterval(makeCircleTransparent,100)
+}
 function makeCircleTransparent(){
     var circleEl = document.getElementById('circle');
     var circleOpacity= parseFloat(circleEl.style.opacity);
