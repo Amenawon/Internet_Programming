@@ -1,0 +1,11 @@
+{
+    "id":1,
+    "animal":"goat",
+    "number":20,
+    "location":"Canada",
+    "date":"25/07/2021",
+    "observer":{
+        "time":"1.29pm",
+        "email":"johndoe@gmail.com"
+    }
+}

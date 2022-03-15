@@ -10,21 +10,18 @@ function keyDownLoadEvent() {
 }
 let interval
 function keyDownEvent(event) {
+    clearInterval(interval);
     if (event.keyCode == 37) {
-        clearInterval(interval);
     interval=  setInterval(moveElementToLeft,10);
       //to clear a timer clearInterval(timer)
     }
-    else if (event.keyCode == 39) {
-        clearInterval(   interval);
+    else if (event.keyCode == 39) { 
         interval=  setInterval(moveElementToRight,10);
     }
-    else if (event.keyCode == 40) {
-        clearInterval();
+    else if (event.keyCode == 40) { 
         interval= setInterval(moveElementToBottom,10);
     }
-    else if (event.keyCode == 38) {
-        clearInterval();
+    else if (event.keyCode == 38) { 
         interval= setInterval(moveElementToTop,10);
     }
 }
